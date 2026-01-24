@@ -1,0 +1,31 @@
+{% extends "profile_base.html" %}
+
+{% block stage %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/overview.css') }}">
+<div class="overview-wrap">
+    <div class="parchment">
+        <img class="parchment-img" src="{{ url_for('static', filename='assets/about_me.png') }}"
+            alt="Parchment background" />
+
+        <div class="parchment-text">
+            <h3>Welcome To My Abode, Fellow Traveller</h3>
+            </br>
+
+            <i>
+                You’ve wandered into a place where logic meets quiet magic.
+            </i>
+            </br>
+
+            <p>
+                My name is Chrysalis, a {{ profile.role }} {{profile.role_description}}. I love automating the tedious, digging into root causes, and building
+                systems that scale with calm confidence.
+            </p>
+            </br>
+
+            <p>
+                This space is a glimpse into my work and the systems I’ve helped shape. Take your time—explore. And when
+                you’re ready, come find me. I’ll be waiting. </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,79 @@
+/* Make the stage behave like a centered canvas */
+.stage {
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  padding: 0;              /* important: remove extra gaps */
+}
+
+/* Let overview fill the entire stage area */
+.overview-wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  padding: 0;
+}
+
+/* Parchment fills the red area */
+.parchment {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: 70vh;        /* adjust if you want taller (eg 75vh / 80vh) */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Image scales to fill the available stage space */
+.parchment-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;     /* keeps whole parchment visible */
+  /* if you want it to fully fill the red area (cropping allowed), use cover instead */
+  /* object-fit: cover; */
+}
+
+/* Text sits on top and stays inside parchment “safe area” */
+.parchment-text {
+  position: absolute;
+  top: 18%;
+  left: 18%;
+  right: 18%;
+  bottom: 18%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  color: #3a2b1a;
+}
+
+/* Typography scales with screen size */
+.parchment-text h2 {
+  font-family: "Cinzel", serif;
+  font-size: clamp(1.3rem, 2.2vw, 2.2rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin: 0 0 0.6rem;
+}
+
+.parchment-text h3 {
+  font-family: "Cinzel", serif;
+  font-size: clamp(1.0rem, 1.6vw, 1.6rem);
+  margin: 0 0 1.2rem;
+}
+
+.parchment-text p {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(0.95rem, 1.1vw, 1.2rem);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 60ch;
+  align-self: center;
+}

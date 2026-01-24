@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chrysalis Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/start.css') }}">
+  </head>
+
+  <body>
+    <main class="hero">
+      <!-- Background image layer -->
+      <div class="hero-bg" aria-hidden="true"></div>
+
+      <!-- Soft fog overlay (like the screenshot) -->
+      <div class="hero-fog" aria-hidden="true"></div>
+
+      <!-- Center content -->
+      <section class="hero-content">
+        <!-- <div class="brand">HI THERE</div> -->
+
+        <div class="headline">
+          <div class="headline-small">Welcome traveller, to</div>
+          <h1 class="headline-big">Chrysalis Portfolio</h1>
+        </div>
+
+        <p class="hero-copy">
+          Step into my work—systems reliability, cloud infrastructure, and projects I’ve built along the way.
+          Explore highlights, case studies, and a little magic behind the engineering.
+        </p>
+
+        <a class="enter-btn" href="/profile?music=1">ENTER</a>
+      </section>
+    </main>
+    <script src="{{ url_for('static', filename='js/footsteps.js') }}"></script>
+</body>
+
+
+</html>

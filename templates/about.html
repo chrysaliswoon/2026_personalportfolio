@@ -1,0 +1,16 @@
+{% extends "profile_base.html" %}
+
+{% block head %}
+{{super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+{% endblock %}
+
+{% block stage %}
+  <div class="about-stage">
+    <div class="about-shell">
+
+      {% include "components/about/hero.html" %}
+
+    </div>
+  </div>
+{% endblock %}

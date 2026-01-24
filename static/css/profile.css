@@ -1,0 +1,447 @@
+/* RESET */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* PAGE */
+.profile-page {
+  color: #e6dcc8;
+  font-family: "Cinzel", "Trajan Pro", "Times New Roman", serif;
+  min-height: 100vh;
+
+}
+
+/* BACKGROUND IMAGE */
+.bg {
+  position: fixed;
+  inset: 0;
+  background-image: url("../assets/profile-bg.png");
+  background-size: cover;
+  background-position: center top;
+  z-index: -2;
+}
+
+/* FOG OVERLAY FOR READABILITY */
+.bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(8, 8, 12, 0.85), rgba(8, 8, 12, 0.50) 40%, rgba(8, 8, 12, 0.25)),
+    radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.10), transparent 60%);
+}
+
+/* NAVBAR */
+/* NAVBAR */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(12, 12, 18, 0.65);
+  backdrop-filter: blur(8px);
+}
+
+/* NAV CONTENT */
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 48px;
+  padding-left: 64px;
+}
+
+/* LEFT BRAND */
+.nav-brand {
+  font-size: 1.6rem;
+  letter-spacing: 0.22em;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #e8d8b0;
+}
+
+/* RIGHT LINKS */
+.nav-right {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-right a {
+  text-decoration: none;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(230, 220, 200, 0.75);
+  padding-bottom: 6px;
+  border-bottom: 1px solid transparent;
+}
+
+.nav-right a:hover {
+  color: #f2e7c9;
+}
+
+.nav-right a.active {
+  color: #f2e7c9;
+  border-bottom: 1px solid #d8c38a;
+}
+
+
+.nav-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(216, 195, 138, 0.6), transparent);
+}
+
+/* LAYOUT: left panel + blank stage */
+.layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 28px;
+  padding: 28px 40px 60px;
+  align-items: start;
+}
+
+/* LEFT PROFILE PANEL */
+.sidecard {
+  width: 290px;
+  padding: 16px 16px 14px;
+  position: relative;
+
+  /* semi-transparent dark panel */
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(18, 18, 24, 0.60),
+      rgba(10, 10, 14, 0.52)
+    );
+
+  border-radius: 10px;
+
+  /* subtle frame */
+  border: 1px solid rgba(216, 195, 138, 0.28);
+
+  /* depth */
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.65),
+    inset 0 0 0 1px rgba(255,255,255,0.03);
+
+  /* IMPORTANT: less blur */
+  backdrop-filter: blur(4px);
+}
+
+
+/* inner frame border */
+.sidecard::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+
+  border-radius: 8px;
+  border: 1px solid rgba(216, 195, 138, 0.14);
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(255,255,255,0.04),
+      transparent 60%
+    );
+
+  pointer-events: none;
+}
+
+
+.sidecard-header {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  padding: 10px 8px 16px;
+  margin-bottom: 10px;
+}
+
+.sidecard-title {
+  font-size: 1.05rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #e8d8b0;
+}
+
+
+/* Portrait */
+.portrait {
+  display: grid;
+  place-items: center;
+  margin: 4px 0 10px;
+}
+
+.portrait-img {
+  width: 260px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Diamond Divider */
+
+.diamond-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  opacity: 1;
+}
+
+.diamond-divider .line {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(216,195,138,0.35),
+    rgba(242,231,201,0.22),
+    transparent
+  );
+}
+
+
+.diamond-divider .diamond {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  transform: rotate(45deg);
+
+  /* bright core */
+  background: linear-gradient(135deg, #ffffff, #e8d8b0 55%, #a88f58);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  /* glow + depth */
+  box-shadow:
+    0 0 10px rgba(255, 255, 255, 0.35),
+    0 0 22px rgba(216, 195, 138, 0.35),
+    0 8px 18px rgba(0, 0, 0, 0.45);
+}
+
+
+/* soft bloom behind */
+.diamond-divider .diamond::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,0.55),
+    rgba(216,195,138,0.28),
+    transparent 70%
+  );
+  filter: blur(6px);
+
+  animation: arcanePulse 3.5s ease-in-out infinite;
+}
+
+
+/* inner shine */
+.diamond-divider .diamond::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.85), rgba(255,255,255,0.0) 60%);
+  opacity: 0.55;
+}
+
+
+
+/* Name + role */
+.identity {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.name {
+  font-size: 1.55rem;
+  letter-spacing: 0.10em;
+  margin-bottom: 8px;
+  color: rgba(242, 231, 201, 0.95);
+}
+
+.role {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(230, 220, 200, 0.55);
+}
+
+
+/* Badges row */
+.badges {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0 12px;
+}
+
+.badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(216, 195, 138, 0.16);
+  color: rgba(242,231,201,0.9);
+}
+
+/* Contact button */
+.contact-btn {
+  display: block;
+  text-align: center;
+  margin: 6px 8px 12px;
+  padding: 12px 12px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: rgba(242,231,201,0.95);
+  background: rgba(216, 195, 138, 0.10);
+  border: 1px solid rgba(216, 195, 138, 0.22);
+}
+
+.contact-btn:hover {
+  background: rgba(216, 195, 138, 0.16);
+  border-color: rgba(216, 195, 138, 0.30);
+}
+
+/* Social */
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(216, 195, 138, 0.14);
+}
+
+.social a {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  color: rgba(242,231,201,0.85);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(216, 195, 138, 0.14);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 600;
+}
+
+.social a:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+/* BLANK MAIN AREA */
+.stage {
+  min-height: 70vh;
+  border-radius: 18px;
+  /* intentionally empty */
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+    padding: 18px 16px 50px;
+  }
+}
+
+/* Diamond Divider Keyframe - Pulse Effect */
+@keyframes arcanePulse {
+  0% {
+    opacity: 0.6;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0.6;
+    transform: scale(0.95);
+  }
+}
+
+
+.music-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+
+  display: grid;
+  place-items: center;
+
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(216, 195, 138, 0.14);
+  color: rgba(242,231,201,0.85);
+
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.music-btn:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+.music-btn:focus-visible {
+  outline: 2px solid rgba(216, 195, 138, 0.55);
+  outline-offset: 2px;
+}
+
+/* ===== PARCHMENT IN MAIN STAGE ===== */
+/* Right-side parchment layout */
+.overview-wrap{
+  position: relative;
+  width: min(860px, 100%);
+  margin: 12px auto;
+}
+
+.parchment{
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 18px 35px rgba(0,0,0,0.45));
+}
+
+.parchment-text{
+  position: absolute;
+  inset: 0;
+  padding: 70px 78px;
+  color: rgba(40, 30, 20, 0.92);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.parchment-text h2{
+  margin: 0 0 18px;
+  font-family: "Cinzel", serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(60, 45, 25, 0.92);
+}
+
+.parchment-text h3{
+  margin: 0 0 18px;
+  font-family: "Cinzel", serif;
+  font-size: 1.9rem;
+  letter-spacing: 0.08em;
+}
+
+.parchment-text p{
+  margin: 0;
+  line-height: 1.75;
+  font-size: 1.05rem;
+  max-width: 62ch;
+}

@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}{{ profile.owner_nickname }} Portfolio{% endblock %}
+{% block body_class %}profile-page{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<!-- Background image -->
+<div class="bg" aria-hidden="true"></div>
+
+<!-- Navbar (shared across all pages) -->
+<header class="navbar">
+  <div class="navbar-inner">
+    <div class="nav-brand">Chrysalis Portfolio</div>
+
+<nav class="nav-right">
+  <a class="{{ 'active' if active_page=='overview' else '' }}" href="{{ url_for('overview') }}">Home</a>
+  <a class="{{ 'active' if active_page=='projects' else '' }}" href="/projects">Projects</a>
+  <a class="{{ 'active' if active_page=='about' else '' }}" href="{{ url_for('about') }}">About Me</a>
+</nav>
+
+  </div>
+
+  <div class="nav-divider"></div>
+</header>
+
+<!-- Page layout -->
+<main class="layout">
+  <!-- LEFT PROFILE PANEL (shared across all pages) -->
+  <aside class="sidecard">
+    <div class="sidecard-header">
+      <div class="sidecard-title">Profile</div>
+
+      <div class="diamond-divider" aria-hidden="true">
+        <span class="line"></span>
+        <span class="diamond"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+
+    <div class="portrait">
+      <img
+        class="portrait-img"
+        src="{{ url_for('static', filename='assets/portrait.png') }}"
+        alt="Chrysalis portrait"
+      />
+    </div>
+
+    <div class="identity">
+      <div class="name">{{ profile.owner_name }}</div>
+      <div class="role">{{ profile.role }}</div>
+    </div>
+
+    <div class="badges">
+      <div class="badge" title="SRE">⚙️</div>
+      <div class="badge" title="Cloud">☁️</div>
+      <div class="badge" title="Reliability">🛡️</div>
+    </div>
+
+    <a class="contact-btn" href="mailto:YOUR_EMAIL_HERE">Contact</a>
+
+    <div class="social">
+      <!-- Music toggle sits next to LinkedIn -->
+      <button id="musicToggle" class="music-btn" type="button" aria-pressed="false" aria-label="Toggle music">
+        ♫
+      </button>
+
+      <a href="#" aria-label="LinkedIn">in</a>
+      <a href="#" aria-label="GitHub">⌂</a>
+      <a href="#" aria-label="Email">✉</a>
+    </div>
+  </aside>
+
+  <!-- RIGHT SIDE (page-specific content goes here) -->
+  <section class="stage" aria-label="Main content area">
+    {% block stage %}{% endblock %}
+  </section>
+</main>
+
+{% endblock %}
+
+{% block scripts %}
+  {# put your music JS here later so it loads on all post-enter pages #}
+  <script src="{{ url_for('static', filename='js/music.js') }}"></script>
+{% endblock %}
