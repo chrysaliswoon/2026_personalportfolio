@@ -1,6 +1,17 @@
 {% extends "profile_base.html" %}
 
-{% block stage %}
-
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/projects.css') }}">
 {% endblock %}
 
+{% block stage %}
+<div class="projects-stage">
+  <div class="projects-shell">
+
+    {% include "components/projects/header.html" %}
+    {% include "components/projects/grid.html" %}
+
+  </div>
+</div>
+{% endblock %}

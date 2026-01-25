@@ -27,8 +27,9 @@ PROFILE = {
 PROJECTS = [
         {
         "slug": "cloudscale",
-        "title": "CloudScale",
-        "subtitle": "Scalable Analytics Platform",
+        "title": "Cloud Scale",
+        "subtitle": "Automated Report Generation Using AWS Cloud Services",
+        "image": "assets/projects/cloudscale.png",
         "stack": ["AWS Lambda", "EC2", "Apache Superset"],
         "description": (
             "Designed a scalable analytics platform using cost-effective, "
@@ -47,7 +48,8 @@ PROJECTS = [
     {
         "slug": "booktribe",
         "title": "BookTribe",
-        "subtitle": "Full-Stack Reading Platform",
+        "subtitle": "Reading Platform Using Modern Full-Stack Architecture",
+        "image": "assets/projects/booktribe.png",
         "stack": ["Angular", "Spring Boot", "MySQL", "DigitalOcean"],
         "description": (
             "Developed a full-stack reading platform with user authentication "
@@ -65,8 +67,9 @@ PROJECTS = [
 
     {
         "slug": "financial-tracker",
-        "title": "Financial Tracker",
+        "title": "Finance Tracker",
         "subtitle": "Collaborative Expense Tracking App",
+        "image": "assets/projects/finance_tracker.png",
         "stack": [
             "MongoDB", "Express.js", "React", "Node.js", "Vercel"
         ],
@@ -82,7 +85,22 @@ PROJECTS = [
         },
         "tags": ["MERN", "CI/CD", "Collaboration"],
         "featured": False
-    }
+    },
+    {
+        "slug": "catris",
+        "title": "Catris",
+        "subtitle": "Cat-Themed Puzzle Game Inspired by Classic Tetris",
+        "image": "assets/projects/catris.png",
+
+    },
+        {
+        "slug": "landscape game",
+        "title": "Landscape Game",
+        "subtitle": "Landscape game inspired by Coffee Tycoon",
+        "image": "assets/projects/landscape.png",
+
+    },
+
 ]
 
 @app.get("/")
@@ -95,7 +113,13 @@ def overview():
 
 @app.get("/projects")
 def projects():
-    return render_template("projects.html", profile=PROJECTS, active_page="projects")
+    return render_template(
+        "projects.html",
+        profile=PROFILE,     # keep profile for the left panel + navbar brand
+        projects=PROJECTS,   # projects data for the grid
+        active_page="projects"
+    )
+
 
 @app.get("/about")
 def about():

@@ -1,0 +1,18 @@
+<section class="projects-grid" aria-label="Projects">
+    {% for p in projects %}
+    <a class="project-card" href="{{ p.url }}" aria-label="Open {{ p.title }}">
+        <div class="project-media">
+            <img src="{{ url_for('static', filename=p.image) }}" alt="" aria-hidden="true">
+        </div>
+
+        <div class="project-footer">
+            <div class="project-title">{{ p.title }}</div>
+            <div class="project-sub">{{ p.subtitle }}</div>
+        </div>
+
+        <div class="project-hover">
+            <div class="project-cta">EXPLORE →</div>
+        </div>
+    </a>
+    {% endfor %}
+</section>

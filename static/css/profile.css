@@ -179,7 +179,7 @@ html, body {
 }
 
 .portrait-img {
-  width: 260px;
+  width: 200px;
   height: auto;
   display: block;
   object-fit: contain;
@@ -297,10 +297,16 @@ html, body {
 
 
 .badge img{
-  width: 100%;
+  width: 200%;
   height: auto;
   display: block;
 }
+
+/* .badge img_social{
+  width: 200%;
+  height: auto;
+  display: block;
+} */
 
 .image-badge img{
   filter:
