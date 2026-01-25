@@ -290,9 +290,23 @@ html, body {
   border-radius: 12px;
   display: grid;
   place-items: center;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(216, 195, 138, 0.16);
+  /* background: rgba(255,255,255,0.06); */
+  /* border: 1px solid rgba(216, 195, 138, 0.16); */
   color: rgba(242,231,201,0.9);
+}
+
+
+.badge img{
+  width: 70%;
+  height: auto;
+  display: block;
+}
+
+/* optional: make ITIL feel “prestige” */
+.image-badge img{
+  filter:
+    drop-shadow(0 0 6px rgba(212,175,55,0.35))
+    drop-shadow(0 0 14px rgba(255,220,140,0.18));
 }
 
 /* Contact button */

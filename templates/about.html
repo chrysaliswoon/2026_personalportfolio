@@ -6,13 +6,24 @@
 {% endblock %}
 
 {% block stage %}
-<div class="about-stage">
-  <div class="about-shell">
-<!-- ABOUT ME HERO -->
-    {% include "components/about/hero.html" %}
-<!-- PAST EXPERIENCES -->
-    {% include "components/about/experience.html" %}
+<div class="about-stage h-100">
+  <div class="container-fluid h-100">
+    <div class="row h-100">
+      <div class="col-12 h-100 d-flex justify-content-center">
+        
+        <!-- This is the "shell" that sits inside the red area -->
+        <div class="about-shell w-100">
 
+          <!-- HERO (stays at top naturally) -->
+          {% include "components/about/hero.html" %}
+
+          <!-- EXPERIENCES (always below hero) -->
+          <!-- {% include "components/about/experience.html" %} -->
+
+        </div>
+
+      </div>
+    </div>
   </div>
 </div>
 {% endblock %}
