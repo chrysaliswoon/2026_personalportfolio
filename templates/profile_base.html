@@ -22,10 +22,10 @@
     <div class="nav-brand">Chrysalis Portfolio</div>
 
     <nav class="nav-right">
-            <!-- Music toggle -->
+      <!-- Music toggle -->
       <button id="musicToggle" class="music-btn" type="button" aria-pressed="false" aria-label="Toggle music">
         ♫
-      </button>
+      </button> 
       <a class="{{ 'active' if active_page=='overview' else '' }}" href="{{ url_for('overview') }}">Home</a>
       <a class="{{ 'active' if active_page=='projects' else '' }}" href="/projects">Projects</a>
       <a class="{{ 'active' if active_page=='about' else '' }}" href="{{ url_for('about') }}">About Me</a>
@@ -69,8 +69,6 @@
 
 
     <div class="social">
-
-
       <a href="https://www.linkedin.com/in/chrysalis-woon-38376198/" aria-label="LinkedIn">in</a>
       <div class="badge image-badge" title="GitHub">
         <a href="https://github.com/chrysaliswoon" aria-label="GitHub"><img
@@ -78,7 +76,10 @@
       </div>
       <a href="mailto:woonyx93@gmail.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
     </div>
+
   </aside>
+
+
 
   <!-- RIGHT SIDE (page-specific content goes here) -->
   <section class="stage" aria-label="Main content area">
