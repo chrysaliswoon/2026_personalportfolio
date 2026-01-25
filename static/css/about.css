@@ -1,190 +1,148 @@
-/* The stage area fill + center */
+/* This is the right-side red-box area (the stage). */
 .about-stage {
-  height: 100%;
-  width: 100%;
-  padding: 12px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* stage already fills the red area in your layout */
 }
 
+/* Keep content centered inside the big right-side stage */
 .about-shell {
-  width: min(980px, 100%);
+  width: min(980px, 92%);
   margin: 0 auto;
-  display: grid;
-  gap: 18px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 48px; /* THIS is what separates hero from experiences */
 }
 
-/* HERO */
-.about-hero-frame {
-  background: rgba(14, 14, 22, 0.55);
-  border: 1px solid rgba(216, 195, 138, 0.20);
-  border-radius: 18px;
-  padding: 22px 22px 18px;
-  box-shadow: 0 16px 50px rgba(0,0,0,0.35);
-  backdrop-filter: blur(10px);
+
+/* Pin hero into the top area */
+.about-hero {
+    position: absolute;
+    top: -138px;
+    /* adjust this until it sits perfectly in the red box */
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(980px, 92%);
+    z-index: 5;
 }
+
+/* Keep the inner frame centered */
+.about-hero-frame {
+    width: 100%;
+    text-align: center;
+}
+
+/* Border+title wrapper from earlier */
+.about-border-wrap {
+    position: relative;
+    width: min(820px, 92vw);
+    margin: 0 auto;
+}
+
+.about-border {
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 0.95;
+    /* Base glow */
+    filter:
+        drop-shadow(0 0 6px rgba(212, 175, 55, 0.18)) drop-shadow(0 0 14px rgba(255, 220, 140, 0.10));
+
+    animation: borderGlowPulse 7s ease-in-out infinite;
+}
+
+@keyframes borderGlowPulse {
+
+    0%,
+    100% {
+        filter:
+            drop-shadow(0 0 6px rgba(212, 175, 55, 0.18)) drop-shadow(0 0 14px rgba(255, 220, 140, 0.10));
+    }
+
+    50% {
+        filter:
+            drop-shadow(0 0 50px rgba(212, 175, 55, 0.35)) drop-shadow(0 0 26px rgba(255, 220, 140, 0.22));
+    }
+}
+
 
 .about-title {
-  margin: 0 0 10px;
-  text-align: center;
-  letter-spacing: 0.28em;
-  font-weight: 600;
-  color: rgba(232, 216, 176, 0.95);
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    font-family: "Cinzel", serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    letter-spacing: 0.28em;
+    color: #e6d8b5;
+    white-space: nowrap;
+    pointer-events: none;
+    background: linear-gradient(120deg,
+            #c8a45a,
+            #f2e6c8,
+            #c8a45a);
+    background-size: 180% 100%;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    animation: goldSheen 8s ease-in-out infinite;
+
+    text-shadow:
+        0 0 8px rgba(240, 220, 170, 0.18),
+        0 2px 6px rgba(0, 0, 0, 0.6);
 }
 
+@keyframes goldSheen {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Put intro text directly under title, still inside the pinned block */
 .about-lede {
-  margin: 0 auto;
-  max-width: 75ch;
-  text-align: center;
-  line-height: 1.8;
-  color: rgba(230, 220, 200, 0.80);
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    margin: -200px auto 0;
+    max-width: 80ch;
+    font-size: 1.02rem;
+    line-height: 1.75;
+    color: rgba(230, 216, 181, 0.9);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
 }
 
-/* Section headings */
-.section-heading {
-  text-align: center;
-  margin-bottom: 10px;
-}
-.section-heading h2 {
-  margin: 0;
-  color: rgba(242, 231, 201, 0.95);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  font-size: 1.05rem;
-}
-.section-heading p {
-  margin: 6px 0 0;
-  color: rgba(230, 220, 200, 0.65);
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-size: 0.92rem;
-}
 
-/* TECH STACK */
-.stack-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-}
 
-.stack-card {
-  background: rgba(14, 14, 22, 0.55);
-  border: 1px solid rgba(216, 195, 138, 0.18);
-  border-radius: 16px;
-  padding: 14px 14px 12px;
-  backdrop-filter: blur(10px);
-}
-
-.stack-card h3 {
-  margin: 0 0 10px;
-  color: rgba(232, 216, 176, 0.90);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-}
-
-.stack-card ul {
-  margin: 0;
-  padding-left: 18px;
-  color: rgba(230, 220, 200, 0.78);
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  line-height: 1.6;
-}
-
-/* PARCHMENT PANEL (Past Work) */
-.parchment-panel {
-  position: relative;
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid rgba(216, 195, 138, 0.18);
-  box-shadow: 0 18px 60px rgba(0,0,0,0.40);
-}
-
-/* Use your parchment image as the background */
-.parchment-panel::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("../assets/about_me_wide.png") center/cover no-repeat;
-  opacity: 0.95;
-  transform: scale(1.01);
-}
-
-/* Inner content */
-.parchment-inner {
-  position: relative;
-  padding: 22px 24px;
-  color: rgba(20, 18, 16, 0.90);
-  font-family: "Cinzel", "Times New Roman", serif;
-}
-
-/* Improve readability on parchment */
-.parchment-inner p,
-.parchment-inner li,
-.parchment-inner span {
-  font-family: Georgia, "Times New Roman", serif;
-  color: rgba(26, 22, 18, 0.85);
-}
-
-.job + .job-divider { margin-top: 14px; }
-.job-head h3 {
-  margin: 0;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-.job-meta {
+/* === PAST EXPERIENCES area (your red box) === */
+.exp-wrap {
+  width: 100%;
   display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 6px;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color: rgba(26, 22, 18, 0.70);
-}
-.job-bullets {
-  margin: 10px 0 0;
-  padding-left: 18px;
-  line-height: 1.65;
-}
-.job-divider {
-  height: 1px;
-  background: rgba(26, 22, 18, 0.18);
+  justify-content: center;
 }
 
-/* Education + certs */
-.edu-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
+.exp-card {
+  width: min(920px, 92%);
+  min-height: 320px;
 
-.edu-card {
-  background: rgba(14, 14, 22, 0.55);
-  border: 1px solid rgba(216, 195, 138, 0.18);
-  border-radius: 16px;
-  padding: 14px 14px 12px;
-  backdrop-filter: blur(10px);
-}
+  padding: 26px 28px;
+  border-radius: 18px;
 
-.edu-card h3 {
-  margin: 0 0 10px;
-  color: rgba(232, 216, 176, 0.90);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-}
+  background: rgba(10, 10, 14, 0.45);
+  backdrop-filter: blur(6px);
 
-.edu-card ul {
-  margin: 0;
-  padding-left: 18px;
-  color: rgba(230, 220, 200, 0.78);
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  line-height: 1.65;
-}
-
-.edu-card span {
-  color: rgba(230, 220, 200, 0.65);
-}
-
-/* Responsive */
-@media (max-width: 1100px) {
-  .stack-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .edu-grid { grid-template-columns: 1fr; }
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.45),
+    inset 0 0 0 1px rgba(255,255,255,0.03);
 }

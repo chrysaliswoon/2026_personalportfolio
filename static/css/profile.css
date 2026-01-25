@@ -445,3 +445,8 @@ html, body {
   font-size: 1.05rem;
   max-width: 62ch;
 }
+
+.stage {
+  min-height: calc(100vh - 140px);
+  border-radius: 18px;
+}

@@ -1,6 +1,16 @@
 <section class="about-hero">
   <div class="about-hero-frame">
-    <h1 class="about-title">ABOUT ME</h1>
+
+    <div class="about-border-wrap">
+      <img
+        class="about-border"
+        src="{{ url_for('static', filename='assets/about_border.png') }}"
+        alt=""
+        aria-hidden="true"
+      />
+      <h1 class="about-title">ABOUT ME</h1>
+    </div>
+
     <p class="about-lede">{{ profile.about_intro }}</p>
   </div>
 </section>

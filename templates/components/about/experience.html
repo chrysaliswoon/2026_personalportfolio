@@ -1,0 +1,35 @@
+<section class="exp-wrap" aria-label="Past Experiences">
+  <div class="exp-card">
+
+    <!-- <img
+      class="exp-divider"
+      src="{{ url_for('static', filename='/assets/border_line.png') }}"
+      alt=""
+      aria-hidden="true"
+    /> -->
+
+    <h2 class="exp-title">Past Experiences</h2>
+
+    <div class="exp-list">
+      {% for job in profile.experiences %}
+        <article class="exp-item">
+          <header class="exp-item-head">
+            <div class="exp-role">
+              <span class="exp-company">{{ job.company }}</span>
+              <span class="exp-dot">•</span>
+              <span class="exp-job">{{ job.title }}</span>
+            </div>
+            <div class="exp-dates">{{ job.dates }}</div>
+          </header>
+
+          <ul class="exp-bullets">
+            {% for b in job.bullets %}
+              <li>{{ b }}</li>
+            {% endfor %}
+          </ul>
+        </article>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>

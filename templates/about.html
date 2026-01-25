@@ -2,15 +2,17 @@
 
 {% block head %}
 {{super() }}
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
 {% endblock %}
 
 {% block stage %}
-  <div class="about-stage">
-    <div class="about-shell">
+<div class="about-stage">
+  <div class="about-shell">
+<!-- ABOUT ME HERO -->
+    {% include "components/about/hero.html" %}
+<!-- PAST EXPERIENCES -->
+    {% include "components/about/experience.html" %}
 
-      {% include "components/about/hero.html" %}
-
-    </div>
   </div>
+</div>
 {% endblock %}

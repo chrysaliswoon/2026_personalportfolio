@@ -1,0 +1,26 @@
+<section class="about-section">
+  <div class="section-heading">
+    <h2>Education & Certifications</h2>
+    <p>The training behind the craft</p>
+  </div>
+
+  <div class="edu-grid">
+    <div class="edu-card">
+      <h3>Education</h3>
+      <ul>
+        {% for e in profile.education %}
+          <li><strong>{{ e.school }}</strong><br><span>{{ e.detail }}</span></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="edu-card">
+      <h3>Certifications</h3>
+      <ul>
+        {% for c in profile.certifications %}
+          <li>{{ c }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
