@@ -1,17 +1,15 @@
-<section class="about-hero">
-  <div class="about-hero-frame">
+<section class="hero">
+  <div class="hero-banner">
+    <img
+      class="hero-banner-img"
+      src="{{ url_for('static', filename='assets/about_border2.png') }}"
+      alt=""
+      aria-hidden="true"
+    />
+  </div>
 
-    <div class="about-border-wrap">
-      <img
-        class="about-border"
-        src="{{ url_for('static', filename='assets/about_border.png') }}"
-        alt=""
-        aria-hidden="true"
-      />
-      <h1 class="about-title">ABOUT ME</h1>
-    </div>
-
-    <p class="about-lede mt-3 mb-0">
-      {{ profile.about_intro }}
-    </p>  </div>
+  <div class="hero-intro">
+    <p class="hero-lede">{{ profile.about_intro_line1 }}</p>
+    <p class="hero-lede">{{ profile.about_intro_line2 }}</p>
+  </div>
 </section>

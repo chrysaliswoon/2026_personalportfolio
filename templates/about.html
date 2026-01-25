@@ -3,6 +3,7 @@
 {% block head %}
 {{super() }}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/hero.css') }}">
 {% endblock %}
 
 {% block stage %}
@@ -18,7 +19,7 @@
           {% include "components/about/hero.html" %}
 
           <!-- EXPERIENCES (always below hero) -->
-          <!-- {% include "components/about/experience.html" %} -->
+          {% include "components/about/experience.html" %}
 
         </div>
 

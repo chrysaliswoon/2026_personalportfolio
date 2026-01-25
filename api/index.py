@@ -13,7 +13,9 @@ PROFILE = {
     "website_creation": "Jan 2026",
     "role": "Systems Analyst",
     "role_description": "focused on cloud infrastructure, reliability, and making complex problems feel simple",
-    "about_intro": "You’ve wandered into a place where logic meets quiet magic. I build calm, resilient systems—cloud infrastructure, reliability engineering, and thoughtful automation.",
+    "about_intro_line1": "Hello! I’m Chrysalis, a passionate software developer and DevOps enthusiast. My experience spans across various programming languages and frameworks, enabling me to contribute effectively to full-stack development and DevOps practices. ",
+    "about_intro_line2": "I am currently exploring opportunities where I can apply my skills in continuous integration and deployment, infrastructure as code, and collaborative software development to drive impactful solutions in the tech industry.",
+
     "tech_stack": {
         "Cloud": ["AWS", "Docker", "Terraform"],
         "DevOps": ["CI/CD"],
@@ -21,6 +23,67 @@ PROFILE = {
     },
 
 }
+
+PROJECTS = [
+        {
+        "slug": "cloudscale",
+        "title": "CloudScale",
+        "subtitle": "Scalable Analytics Platform",
+        "stack": ["AWS Lambda", "EC2", "Apache Superset"],
+        "description": (
+            "Designed a scalable analytics platform using cost-effective, "
+            "serverless architecture with AWS Lambda. Visualized real-time "
+            "data pipelines with Superset and integrated monitoring to track usage."
+        ),
+        "links": {
+            "docs": "https://your-gitbook-link",
+            "github": None,
+            "demo": None
+        },
+        "tags": ["Cloud", "Serverless", "Analytics"],
+        "featured": True
+    },
+
+    {
+        "slug": "booktribe",
+        "title": "BookTribe",
+        "subtitle": "Full-Stack Reading Platform",
+        "stack": ["Angular", "Spring Boot", "MySQL", "DigitalOcean"],
+        "description": (
+            "Developed a full-stack reading platform with user authentication "
+            "and dynamic content rendering. Implemented RESTful APIs and "
+            "deployed a scalable backend on DigitalOcean."
+        ),
+        "links": {
+            "github": "https://github.com/yourname/booktribe",
+            "slides": "https://your-presentation-link",
+            "demo": None
+        },
+        "tags": ["Full Stack", "REST API"],
+        "featured": True
+    },
+
+    {
+        "slug": "financial-tracker",
+        "title": "Financial Tracker",
+        "subtitle": "Collaborative Expense Tracking App",
+        "stack": [
+            "MongoDB", "Express.js", "React", "Node.js", "Vercel"
+        ],
+        "description": (
+            "Built a full-stack expense tracking application supporting "
+            "multi-user input and real-time updates. Designed collaborative "
+            "wireframes and user flows in Figma, implemented Git workflows, "
+            "and deployed via Vercel for CI/CD."
+        ),
+        "links": {
+            "github": "https://github.com/yourname/financial-tracker",
+            "demo": None
+        },
+        "tags": ["MERN", "CI/CD", "Collaboration"],
+        "featured": False
+    }
+]
 
 @app.get("/")
 def start():
@@ -32,7 +95,7 @@ def overview():
 
 @app.get("/projects")
 def projects():
-    return render_template("projects.html", profile=PROFILE, active_page="projects")
+    return render_template("projects.html", profile=PROJECTS, active_page="projects")
 
 @app.get("/about")
 def about():

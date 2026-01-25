@@ -297,12 +297,11 @@ html, body {
 
 
 .badge img{
-  width: 70%;
+  width: 100%;
   height: auto;
   display: block;
 }
 
-/* optional: make ITIL feel “prestige” */
 .image-badge img{
   filter:
     drop-shadow(0 0 6px rgba(212,175,55,0.35))

@@ -1,0 +1,34 @@
+.exp-wrap{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.exp-card{
+  width: min(980px, 92%);
+  padding: 26px 28px;
+  border-radius: 18px;
+
+  background: rgba(10, 10, 14, 0.45);
+  backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45),
+              inset 0 0 0 1px rgba(255,255,255,0.03);
+}
+
+.exp-divider{
+  width: 220px;
+  height: auto;
+  display: block;
+  margin: 0 auto 12px;
+  opacity: 0.95;
+}
+
+.exp-title{
+  text-align: center;
+  font-family: "Cinzel", serif;
+  letter-spacing: 0.22em;
+  margin: 0 0 14px;
+  color: rgba(230,216,181,0.92);
+}
