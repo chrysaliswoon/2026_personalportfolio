@@ -44,8 +44,12 @@
         img.src = "/static/" + src;
         img.alt = project.title + " snapshot";
         img.className = "pmodal-shot";
+
+        img.addEventListener("click", () => openShotbox(img.src));
+
         shotsEl.appendChild(img);
       });
+
     } else {
       shotsWrap.style.display = "none";
     }
@@ -88,6 +92,34 @@
     document.body.style.overflow = "";
     if (shell) shell.classList.remove("modal-open");
   }
+
+  const shotbox = document.getElementById("shotbox");
+const shotboxImg = document.getElementById("shotboxImage");
+
+function openShotbox(src) {
+  shotboxImg.src = src;
+  shotbox.classList.add("is-open");
+  shotbox.setAttribute("aria-hidden", "false");
+}
+
+function closeShotbox() {
+  shotbox.classList.remove("is-open");
+  shotbox.setAttribute("aria-hidden", "true");
+  shotboxImg.src = "";
+}
+
+// close handlers
+shotbox.querySelectorAll("[data-shot-close]").forEach(el => {
+  el.addEventListener("click", closeShotbox);
+});
+
+// ESC support
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && shotbox.classList.contains("is-open")) {
+    closeShotbox();
+  }
+});
+
 
   // Open on card click
   document.querySelectorAll(".project-card").forEach((card) => {
