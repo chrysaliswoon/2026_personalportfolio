@@ -170,3 +170,81 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ===== Modal base ===== */
+.pmodal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: none;           /* hidden by default */
+  align-items: center;
+  justify-content: center;
+
+  padding: 28px;
+}
+
+.pmodal.is-open {
+  display: flex;           /* becomes overlay */
+}
+
+/* dark backdrop */
+.pmodal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(6px);
+}
+
+/* modal panel */
+.pmodal-panel {
+  position: relative;
+  z-index: 1;
+
+  width: min(1100px, 96vw);
+  max-height: min(82vh, 760px);
+  overflow: auto;
+
+  border-radius: 18px;
+  background: rgba(10, 10, 14, 0.78);
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+}
+
+/* close button */
+.pmodal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  color: rgba(230,216,181,0.95);
+
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.pmodal-close:hover {
+  border-color: rgba(212, 175, 55, 0.45);
+}
+
+/* ===== Hide the grid while modal open ===== */
+.projects-shell.modal-open .projects-grid,
+.projects-shell.modal-open .projects-header {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.projects-grid,
+.projects-header {
+  transition: opacity 160ms ease, transform 160ms ease;
+}

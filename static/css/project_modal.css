@@ -1,0 +1,168 @@
+.pmodal{
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 9999;
+}
+
+.pmodal.is-open{
+  display: block;
+}
+
+.pmodal-backdrop{
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(6px);
+}
+
+.pmodal-panel{
+  position: relative;
+  width: min(1100px, 92%);
+  margin: 5vh auto;
+  border-radius: 18px;
+
+  background: rgba(10,10,14,.78);
+  border: 1px solid rgba(212,175,55,.28);
+  box-shadow: 0 18px 60px rgba(0,0,0,.65);
+
+  overflow: hidden;
+}
+
+.pmodal-close{
+  position:absolute;
+  top: 10px;
+  right: 14px;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+
+  background: rgba(0,0,0,.35);
+  border: 1px solid rgba(212,175,55,.28);
+  color: rgba(242,230,200,.95);
+  font-size: 22px;
+  cursor:pointer;
+}
+
+.pmodal-header{
+  padding: 22px 24px 14px;
+  text-align:center;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+.pmodal-title{
+  font-family: "Cinzel", serif;
+  letter-spacing: .22em;
+  color: rgba(230,216,181,.95);
+  font-size: 1.35rem;
+}
+
+.pmodal-subtitle{
+  margin-top: 8px;
+  color: rgba(230,216,181,.8);
+}
+
+.pmodal-body{
+  display:grid;
+  grid-template-columns: 360px 1fr;
+  gap: 18px;
+  padding: 18px 18px 22px;
+}
+
+@media (max-width: 900px){
+  .pmodal-body{ grid-template-columns: 1fr; }
+}
+
+.pmodal-hero{
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(212,175,55,.22);
+  background: rgba(0,0,0,.25);
+}
+
+.pmodal-hero img{
+  width: 100%;
+  height: auto;
+  display:block;
+}
+
+.pmodal-links{
+  margin-top: 14px;
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pmodal-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap: 8px;
+
+  padding: 10px 14px;
+  border-radius: 999px;
+
+  background: rgba(0,0,0,.25);
+  border: 1px solid rgba(212,175,55,.32);
+  color: rgba(242,230,200,.95);
+  text-decoration:none;
+
+  font-family: "Cinzel", serif;
+  letter-spacing: .14em;
+  font-size: .82rem;
+}
+
+.pmodal-section{
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.06);
+  background: rgba(0,0,0,.18);
+  margin-bottom: 12px;
+}
+
+.pmodal-section-title{
+  font-family: "Cinzel", serif;
+  letter-spacing: .18em;
+  color: rgba(230,216,181,.92);
+  margin-bottom: 10px;
+}
+
+.pmodal-text{
+  color: rgba(230,216,181,.84);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.pmodal-stack{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pmodal-pill{
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(212,175,55,.26);
+  background: rgba(0,0,0,.22);
+  color: rgba(230,216,181,.88);
+  font-size: .86rem;
+}
+
+.pmodal-shots{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.pmodal-shot{
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(212,175,55,.18);
+  background: rgba(0,0,0,.22);
+}
+
+.pmodal-shot img{
+  width:100%;
+  height:auto;
+  display:block;
+}

@@ -3,6 +3,8 @@
 {% block head %}
   {{ super() }}
   <link rel="stylesheet" href="{{ url_for('static', filename='css/projects.css') }}">
+  <script src="{{ url_for('static', filename='js/project.js') }}" defer></script>
+
 {% endblock %}
 
 {% block stage %}
@@ -11,6 +13,7 @@
 
     {% include "components/projects/header.html" %}
     {% include "components/projects/grid.html" %}
+    {% include "components/projects/project_modal.html" %}
 
   </div>
 </div>
