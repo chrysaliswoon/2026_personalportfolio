@@ -172,43 +172,42 @@
 }
 
 /* ===== Modal base ===== */
+/* overlay */
 .pmodal {
   position: fixed;
   inset: 0;
+  display: none;
   z-index: 9999;
-
-  display: none;           /* hidden by default */
-  align-items: center;
-  justify-content: center;
-
-  padding: 28px;
 }
 
 .pmodal.is-open {
-  display: flex;           /* becomes overlay */
+  display: block;
 }
 
-/* dark backdrop */
 .pmodal-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.65);
+  background: rgba(0,0,0,0.55);
   backdrop-filter: blur(6px);
 }
 
-/* modal panel */
+/* panel */
 .pmodal-panel {
-  position: relative;
-  z-index: 1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 
-  width: min(1100px, 96vw);
-  max-height: min(82vh, 760px);
+  width: min(1100px, 92vw);
+  max-height: min(80vh, 820px);
   overflow: auto;
 
   border-radius: 18px;
-  background: rgba(10, 10, 14, 0.78);
+  padding: 22px 22px 18px;
+
+  background: rgba(10, 10, 14, 0.82);
   border: 1px solid rgba(212, 175, 55, 0.28);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
 }
 
 /* close button */
@@ -216,35 +215,165 @@
   position: absolute;
   top: 14px;
   right: 14px;
-  z-index: 2;
 
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
 
   background: rgba(0,0,0,0.35);
-  border: 1px solid rgba(212, 175, 55, 0.25);
+  border: 1px solid rgba(212, 175, 55, 0.35);
   color: rgba(230,216,181,0.95);
 
-  font-size: 22px;
+  font-size: 26px;
   line-height: 1;
   cursor: pointer;
 }
 
-.pmodal-close:hover {
-  border-color: rgba(212, 175, 55, 0.45);
+/* top header */
+.pmodal-top {
+  text-align: center;
+  padding: 6px 10px 14px;
 }
 
-/* ===== Hide the grid while modal open ===== */
-.projects-shell.modal-open .projects-grid,
-.projects-shell.modal-open .projects-header {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-6px);
-  transition: opacity 160ms ease, transform 160ms ease;
+.pmodal-title {
+  margin: 0;
+  font-family: "Cinzel", serif;
+  letter-spacing: 0.18em;
+  color: rgba(230, 216, 181, 0.98);
+  font-size: clamp(1.6rem, 2.4vw, 2.4rem);
 }
 
-.projects-grid,
-.projects-header {
-  transition: opacity 160ms ease, transform 160ms ease;
+.pmodal-subtitle {
+  margin-top: 8px;
+  color: rgba(230,216,181,0.78);
+  letter-spacing: 0.06em;
+}
+
+.pmodal-divider {
+  margin: 12px auto 0;
+  width: min(760px, 92%);
+  height: auto;
+  opacity: 0.9;
+  display: block;
+}
+
+/* body grid */
+.pmodal-body {
+  display: grid;
+  grid-template-columns: 0.95fr 1.25fr;
+  gap: 18px;
+  padding: 10px 6px 8px;
+}
+
+@media (max-width: 900px) {
+  .pmodal-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pmodal-left {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  background: rgba(0,0,0,0.25);
+}
+
+.pmodal-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* right content */
+.pmodal-section {
+  padding: 14px 14px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(212,175,55,0.18);
+  background: rgba(0,0,0,0.20);
+  margin-bottom: 12px;
+}
+
+.pmodal-section-title {
+  font-family: "Cinzel", serif;
+  letter-spacing: 0.18em;
+  color: rgba(230,216,181,0.9);
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.pmodal-text {
+  margin: 0;
+  color: rgba(230,216,181,0.86);
+  line-height: 1.75;
+}
+
+.pmodal-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pmodal-pill {
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(212,175,55,0.28);
+  background: rgba(0,0,0,0.22);
+  color: rgba(230,216,181,0.88);
+  font-size: 0.9rem;
+}
+
+/* footer links */
+.pmodal-footer {
+  padding: 10px 6px 0;
+}
+
+.pmodal-links {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pmodal-linkbtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 16px;
+  border-radius: 12px;
+
+  background: rgba(0,0,0,0.32);
+  border: 1px solid rgba(212,175,55,0.35);
+  color: rgba(230,216,181,0.92);
+
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+}
+
+/* make panel padding consistent */
+.pmodal-panel {
+  padding: 22px;
+}
+
+/* ensure footer is separated nicely */
+.pmodal-footer {
+  margin-top: 10px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(212,175,55,0.18);
+}
+
+.pmodal-body {
+  align-items: stretch;
+}
+
+.pmodal-left {
+  display: flex;
+}
+
+.pmodal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

@@ -30,6 +30,32 @@
     document.body.style.overflow = "hidden";
     if (shell) shell.classList.add("modal-open");
 
+    // footer link buttons
+    const linksEl = document.getElementById("pmodalLinks");
+    linksEl.innerHTML = "";
+
+    const links = project.links || {};
+    const linkOrder = [
+      ["github", "GitHub Repository"],
+      ["demo", "Live Demo"],
+      ["docs", "Documentation"],
+      ["slides", "Presentation"]
+    ];
+
+    linkOrder.forEach(([key, label]) => {
+      const url = links[key];
+      if (!url) return;
+
+      const a = document.createElement("a");
+      a.className = "pmodal-linkbtn";
+      a.href = url;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      a.textContent = label;
+      linksEl.appendChild(a);
+    });
+
+
     // focus close button for accessibility
     const closeBtn = modal.querySelector(".pmodal-close");
     closeBtn?.focus();
