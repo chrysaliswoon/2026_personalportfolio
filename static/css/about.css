@@ -1,0 +1,13 @@
+.about-shell{
+  width: min(980px, 92%);
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
+
+  /* prevents any child from overflowing into the left profile column */
+  max-width: 100%;
+  overflow-x: clip;
+}

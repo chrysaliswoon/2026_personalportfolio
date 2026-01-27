@@ -1,0 +1,181 @@
+.techstack {
+  /* IMPORTANT: keeps it inside the about content width */
+  width: 100%;
+  max-width: 980px;   /* match your hero width */
+  margin: 18px auto 0;
+  padding: 0 0 6px;
+}
+
+.techstack-header {
+  text-align: center;
+  margin: 0 auto 12px;
+}
+
+.techstack-line {
+  width: min(860px, 96%);
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 10px rgba(212,175,55,0.10));
+}
+
+.techstack-title {
+  margin: 0;
+  font-family: "Cinzel", serif;
+  letter-spacing: 0.26em;
+  font-weight: 500;
+  color: rgba(230,216,181,0.92);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.55);
+}
+
+.techstack-wrap {
+  position: relative;
+  display: grid;
+  grid-template-columns: 52px 1fr 52px;
+  align-items: center;
+  gap: 10px;
+
+  /* This ensures nothing “spills” left */
+  width: 100%;
+}
+
+.techstack-rail {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  padding: 12px 8px 16px;
+  border-top: 1px solid rgba(212,175,55,0.14);
+
+  /* makes track feel nice */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(212,175,55,0.35) rgba(0,0,0,0.2);
+
+  /* keep the rail clipped within the section */
+  max-width: 100%;
+}
+
+.techstack-rail::-webkit-scrollbar {
+  height: 10px;
+}
+.techstack-rail::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.18);
+}
+.techstack-rail::-webkit-scrollbar-thumb {
+  background: rgba(212,175,55,0.35);
+  border-radius: 999px;
+}
+
+.techstack-item {
+  flex: 0 0 auto;
+  width: 110px;
+  text-align: center;
+}
+
+.techstack-icon {
+  width: 84px;
+  height: 84px;
+  margin: 0 auto;
+  border-radius: 18px;
+
+  background: rgba(10,10,14,0.45);
+  border: 1px solid rgba(212,175,55,0.22);
+
+  box-shadow:
+    0 10px 22px rgba(0,0,0,0.45),
+    inset 0 0 0 1px rgba(255,255,255,0.03);
+
+  display: grid;
+  place-items: center;
+
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+.techstack-icon img {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 0 10px rgba(212,175,55,0.10));
+}
+
+.techstack-name {
+  margin-top: 10px;
+  font-family: "Cinzel", serif;
+  letter-spacing: 0.14em;
+  color: rgba(230,216,181,0.78);
+  font-size: 0.78rem;
+}
+
+/* hover */
+.techstack-item:hover .techstack-icon {
+  transform: translateY(-3px);
+  border-color: rgba(212,175,55,0.40);
+  box-shadow:
+    0 14px 28px rgba(0,0,0,0.55),
+    0 0 24px rgba(212,175,55,0.10),
+    inset 0 0 0 1px rgba(255,255,255,0.04);
+}
+
+/* arrows */
+.techstack-arrow {
+  height: 44px;
+  width: 44px;
+  border-radius: 999px;
+  cursor: pointer;
+
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(212,175,55,0.28);
+  color: rgba(230,216,181,0.95);
+
+  font-size: 28px;
+  line-height: 1;
+}
+
+.techstack-arrow:hover {
+  border-color: rgba(212,175,55,0.45);
+}
+
+/* hide arrows on small screens (swipe) */
+@media (max-width: 700px) {
+  .techstack-wrap {
+    grid-template-columns: 1fr;
+  }
+  .techstack-arrow {
+    display: none;
+  }
+}
+
+.tech-header{
+  text-align: center;
+  margin: 24px auto 14px;
+}
+
+.tech-title-row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+}
+
+.tech-line{
+  width: min(260px, 22vw);   /* controls line length */
+  height: auto;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 10px rgba(212,175,55,0.10));
+  flex: 1 1 auto;            /* lets lines shrink on small screens */
+  max-width: 260px;
+}
+
+.tech-title{
+  margin: 0;
+  font-family: "Cinzel", serif;
+  letter-spacing: 0.26em;
+  font-weight: 500;
+  color: rgba(230,216,181,0.92);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.55);
+  white-space: nowrap;
+}

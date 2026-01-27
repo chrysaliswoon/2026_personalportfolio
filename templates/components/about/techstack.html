@@ -1,0 +1,36 @@
+<section class="techstack" aria-label="Tech Stack">
+  <header class="tech-header">
+    <div class="tech-title-row">
+      <img class="tech-line" src="{{ url_for('static', filename='assets/line_left.png') }}" alt=""
+        aria-hidden="true">
+
+      <h2 class="tech-title">TECH STACK</h2>
+
+      <img class="tech-line" src="{{ url_for('static', filename='assets/line_right.png') }}" alt=""
+        aria-hidden="true">
+    </div>
+  </header>
+
+
+  <div class="techstack-wrap">
+    <button class="techstack-arrow left" type="button" aria-label="Scroll left" data-tech-left>
+      ‹
+    </button>
+
+    <div class="techstack-rail" data-tech-rail>
+      {% for t in profile.tech_stack_carousel %}
+      <div class="techstack-item">
+        <div class="techstack-icon">
+          <img src="{{ url_for('static', filename=t.icon) }}" alt="{{ t.name }} logo" loading="lazy">
+        </div>
+        <div class="techstack-name">{{ t.name }}</div>
+      </div>
+      {% endfor %}
+    </div>
+
+
+    <button class="techstack-arrow right" type="button" aria-label="Scroll right" data-tech-right>
+      ›
+    </button>
+  </div>
+</section>

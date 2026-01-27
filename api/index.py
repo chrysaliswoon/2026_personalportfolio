@@ -16,11 +16,69 @@ PROFILE = {
     "about_intro_line1": "Hello! I’m Chrysalis, a passionate software developer and DevOps enthusiast. My experience spans across various programming languages and frameworks, enabling me to contribute effectively to full-stack development and DevOps practices. ",
     "about_intro_line2": "I am currently exploring opportunities where I can apply my skills in continuous integration and deployment, infrastructure as code, and collaborative software development to drive impactful solutions in the tech industry.",
 
-    "tech_stack": {
-        "Cloud": ["AWS", "Docker", "Terraform"],
-        "DevOps": ["CI/CD"],
-        "Programming": ["Python", "Java"]
+"tech_stack_carousel": [
+            {
+        "name": "AWS",
+        "icon": "assets/tech/aws.png"
     },
+            {
+        "name": "Docker",
+        "icon": "assets/tech/docker.png"
+    },
+            {
+        "name": "Linux",
+        "icon": "assets/tech/linux.png"
+    },
+            {
+        "name": "Git",
+        "icon": "assets/tech/git.png"
+    },
+            {
+        "name": "CI/CD",
+        "icon": "assets/tech/cicd.png"
+    },
+
+    {
+        "name": "Python",
+        "icon": "assets/tech/python.png"
+    },
+            {
+        "name": "Javascript",
+        "icon": "assets/tech/javascript.png"
+    },
+            {
+        "name": "React",
+        "icon": "assets/tech/react.png"
+    },
+            {
+        "name": "Angular",
+        "icon": "assets/tech/angular.png"
+    },
+            {
+        "name": "Spring Boot",
+        "icon": "assets/tech/springboot.png"
+    },
+            {
+        "name": "HTML/CSS",
+        "icon": "assets/tech/htmlcss.png"
+    },
+            {
+        "name": "MySQL",
+        "icon": "assets/tech/sql.png"
+    },
+            {
+        "name": "MongoDB",
+        "icon": "assets/tech/mongodb.png"
+    },
+            {
+        "name": "Redis",
+        "icon": "assets/tech/redis.png"
+    },
+            {
+        "name": "Jira",
+        "icon": "assets/tech/jira.png"
+    },
+],
 
 }
 
@@ -31,9 +89,10 @@ PROJECTS = [
         "subtitle": "Automated Report Generation Using AWS Cloud Services",
         "image": "assets/projects/cloudscale.png",
         "stack": ["AWS Lambda", "EC2", "Apache Superset"],
-                "shots": [
+        "shots": [
 
         ],
+
         "description": (
             "Designed a scalable analytics platform using cost-effective, "
             "serverless architecture with AWS Lambda. Visualized real-time "

@@ -94,31 +94,31 @@
   }
 
   const shotbox = document.getElementById("shotbox");
-const shotboxImg = document.getElementById("shotboxImage");
+  const shotboxImg = document.getElementById("shotboxImage");
 
-function openShotbox(src) {
-  shotboxImg.src = src;
-  shotbox.classList.add("is-open");
-  shotbox.setAttribute("aria-hidden", "false");
-}
-
-function closeShotbox() {
-  shotbox.classList.remove("is-open");
-  shotbox.setAttribute("aria-hidden", "true");
-  shotboxImg.src = "";
-}
-
-// close handlers
-shotbox.querySelectorAll("[data-shot-close]").forEach(el => {
-  el.addEventListener("click", closeShotbox);
-});
-
-// ESC support
-window.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && shotbox.classList.contains("is-open")) {
-    closeShotbox();
+  function openShotbox(src) {
+    shotboxImg.src = src;
+    shotbox.classList.add("is-open");
+    shotbox.setAttribute("aria-hidden", "false");
   }
-});
+
+  function closeShotbox() {
+    shotbox.classList.remove("is-open");
+    shotbox.setAttribute("aria-hidden", "true");
+    shotboxImg.src = "";
+  }
+
+  // close handlers
+  shotbox.querySelectorAll("[data-shot-close]").forEach(el => {
+    el.addEventListener("click", closeShotbox);
+  });
+
+  // ESC support
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && shotbox.classList.contains("is-open")) {
+      closeShotbox();
+    }
+  });
 
 
   // Open on card click
