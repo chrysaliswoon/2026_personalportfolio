@@ -30,6 +30,27 @@
     document.body.style.overflow = "hidden";
     if (shell) shell.classList.add("modal-open");
 
+    // project snapshots
+    const shotsWrap = document.getElementById("pmodalShotsWrap");
+    const shotsEl = document.getElementById("pmodalShots");
+
+    shotsEl.innerHTML = "";
+
+    if (project.shots && project.shots.length) {
+      shotsWrap.style.display = "block";
+
+      project.shots.forEach((src) => {
+        const img = document.createElement("img");
+        img.src = "/static/" + src;
+        img.alt = project.title + " snapshot";
+        img.className = "pmodal-shot";
+        shotsEl.appendChild(img);
+      });
+    } else {
+      shotsWrap.style.display = "none";
+    }
+
+
     // footer link buttons
     const linksEl = document.getElementById("pmodalLinks");
     linksEl.innerHTML = "";

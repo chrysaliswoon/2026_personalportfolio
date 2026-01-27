@@ -31,6 +31,9 @@ PROJECTS = [
         "subtitle": "Automated Report Generation Using AWS Cloud Services",
         "image": "assets/projects/cloudscale.png",
         "stack": ["AWS Lambda", "EC2", "Apache Superset"],
+                "shots": [
+
+        ],
         "description": (
             "Designed a scalable analytics platform using cost-effective, "
             "serverless architecture with AWS Lambda. Visualized real-time "
@@ -51,6 +54,13 @@ PROJECTS = [
         "subtitle": "Reading Platform Using Modern Full-Stack Architecture",
         "image": "assets/projects/booktribe.png",
         "stack": ["Angular", "Spring Boot", "MySQL", "DigitalOcean"],
+                        "shots": [
+                            "assets/projects/booktribe/register.png",
+                            "assets/projects/booktribe/login.png",
+                            "assets/projects/booktribe/contact.png",
+
+
+        ],
         "description": (
             "Developed a full-stack reading platform with user authentication "
             "and dynamic content rendering. Implemented RESTful APIs and "
