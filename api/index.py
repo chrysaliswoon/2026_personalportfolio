@@ -83,35 +83,13 @@ PROFILE = {
 }
 
 PROJECTS = [
-        {
-        "slug": "cloudscale",
-        "title": "Cloud Scale",
-        "subtitle": "Automated Report Generation Using AWS Cloud Services",
-        "image": "assets/projects/cloudscale.png",
-        "stack": ["AWS Lambda", "EC2", "Apache Superset"],
-        "shots": [
-
-        ],
-
-        "description": (
-            "Designed a scalable analytics platform using cost-effective, "
-            "serverless architecture with AWS Lambda. Visualized real-time "
-            "data pipelines with Superset and integrated monitoring to track usage."
-        ),
-        "links": {
-            "docs": "https://your-gitbook-link",
-            "github": None,
-            "demo": None
-        },
-        "tags": ["Cloud", "Serverless", "Analytics"],
-        "featured": True
-    },
 
     {
         "slug": "booktribe",
         "title": "BookTribe",
         "subtitle": "Reading Platform Using Modern Full-Stack Architecture",
         "image": "assets/projects/booktribe.png",
+         "modal_image": "",
         "stack": ["Angular", "Spring Boot", "MySQL", "DigitalOcean"],
                         "shots": [
                             "assets/projects/booktribe/register.png",
@@ -139,6 +117,7 @@ PROJECTS = [
         "title": "Finance Tracker",
         "subtitle": "Collaborative Expense Tracking App",
         "image": "assets/projects/finance_tracker.png",
+                 "modal_image": "",
         "stack": [
             "MongoDB", "Express.js", "React", "Node.js", "Vercel"
         ],
@@ -154,6 +133,32 @@ PROJECTS = [
         },
         "tags": ["MERN", "CI/CD", "Collaboration"],
         "featured": False
+    },
+            {
+        "slug": "cloudscale",
+        "title": "Cloud Scale",
+        "subtitle": "Automated Report Generation Using AWS Cloud Services",
+        "image": "assets/projects/cloudscale.png",
+        "modal_image": "assets/projects/cloudscale.png",
+        "stack": ["AWS Lambda", "EC2", "Apache Superset"],
+        "shots": [
+            "assets/projects/cloudscale/dashboard.png",
+            "assets/projects/cloudscale/login.png",
+            "assets/projects/cloudscale/project_structure.png"
+        ],
+
+        "description": (
+            "This capstone project is designed to demonstrate the use of AWS infrastructure for managing scalable cloud environments, a serverless Lambda-based application, and Apache Superset for data visualization.\n\n"
+            "The goal is to provide a solution that integrates these components to offer efficient, scalable, and user-friendly data management and visualization."
+            
+        ),
+        "links": {
+            "docs": "https://chrysalis-1.gitbook.io/sctp-capstone-project/",
+            "github": None,
+            "demo": None
+        },
+        "tags": ["Cloud", "Serverless", "Analytics"],
+        "featured": True
     },
     {
         "slug": "catris",
@@ -174,34 +179,62 @@ PROJECTS = [
 
 EXPERIENCES = [
   {
-    "role": "Site Reliability Engineer",
-    "company": "Visa Singapore",
-    "dates": "2022 – 2025",
-    "location": "Singapore",
+    "role": "Sr. Systems Application Support",
+    "company": "Visa Worldwide Pte Ltd",
+    "dates": "June 2023 – July 2025",
     "links": {
       "website": "https://www.visa.com"
     },
-    "summary": "Supported high-availability payment systems, incident response, and reliability improvements across production environments.",
+    "summary": "Supported mission-critical zTPF mainframe systems powering global payment transactions, ensuring high availability and operational reliability.",
     "bullets": [
-      "Led incident triage, escalation, and RCA documentation in regulated environments.",
-      "Built automation to reduce operational toil and improve monitoring coverage.",
-      "Collaborated cross-functionally to deploy changes safely and maintain SLAs."
+      "Provided system-level operational support for Visa’s zTPF mainframe environments powering global payment transactions.",
+      "Troubleshoot technical incidents, coordinated with cross-regional engineering teams, and ensured uptime compliance.",
+      "Authored detailed technical documentation for MQ channel configurations and system workflows.",
+      "Assisted infrastructure teams with deployments and configuration updates to support zero-downtime change initiatives.",
+      "Collaborated with global support and development teams to analyze and resolve performance issues."
     ],
-    "tags": ["SRE", "Incident Response", "Monitoring", "Automation", "Linux"]
+    "tags": ["Mainframe Systems", "Incident Management", "High Availability", "Production Support", "Global Operations"]
   },
   {
-    "role": "Software Engineer",
-    "company": "Kodecoon",
-    "dates": "2021 – 2022",
-    "location": "Singapore",
+    "role": "Associate Systems Analyst Trainee",
+    "company": "Visa Worldwide Pte Ltd",
+    "dates": "May 2022 – June 2023",
     "links": {},
-    "summary": "Delivered software features and supported deployments in a fast-paced environment.",
+    "summary": "Provided frontline operational support for enterprise systems, responding to incidents, monitoring system health, and escalating issues through ITSM workflows.",
     "bullets": [
-      "Implemented features and bug fixes across web applications.",
-      "Worked with Git workflows and collaborated with stakeholders for delivery."
+      "Responded to IT incidents and system alerts, assisting in maintaining 24/7 operational reliability.",
+      "Monitored system metrics and escalated issues through ServiceNow and internal ticketing systems.",
+      "Documented recurring issues and contributed to internal knowledge bases for smoother handovers.",
+      "Supported production system maintenance and user access management processes in alignment with ITIL standards."
     ],
-    "tags": ["JavaScript", "Web Dev", "Git"]
-  }
+    "tags": ["IT Operations", "Monitoring & Alerts", "ServiceNow", "ITIL", "Production Support"]
+  },
+    {
+    "role": "Instructional Team",
+    "company": "Kodecoon Academy",
+    "dates": "Nov 2021 – Mar 2023",
+    "links": {},
+    "summary": "Combined technical expertise with teaching and program design to make software development accessible and engaging for learners.",
+    "bullets": [
+      "Delivered hands-on programming instruction in Python, JavaScript, and web development (HTML/CSS/JS) to youth learners.",
+      "Spearheaded curriculum redesign initiatives, increasing student retention rates by 40%.",
+      "Collaborated with internal dev teams to produce scalable digital learning materials and optimize content delivery pipelines.",
+    ],
+    "tags": ["Technical Education", "Python & Javascript", "Curriculum Design", "EdTech", "Content Delivery"]
+  },
+      {
+    "role": "Product Team",
+    "company": "Saturday Kids",
+    "dates": "Feb 2018 – Nov 2021",
+    "links": {},
+    "summary": "Bridged product thinking with execution, ensuring that growth was supported by automation, documentation, and repeatable workflows.",
+    "bullets": [
+      "Designed and launched 8+ technical education products, contributing to consistent annual revenue growth.",
+      "Developed an internal ATS system using Airtable, automating 60% of recruitment workflows and reducing manual HR processes.",
+      "Standardized onboarding frameworks for new technical instructors, cutting training time by 50% through reusable documentation and process improvements.",
+    ],
+    "tags": ["Product Development", "Process Automation", "Airtable", "Operations & Optimization"]
+  },
 ]
 
 

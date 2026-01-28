@@ -306,6 +306,7 @@
   margin: 0;
   color: rgba(230,216,181,0.86);
   line-height: 1.75;
+  white-space: pre-line;
 }
 
 .pmodal-stack {

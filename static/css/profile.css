@@ -470,3 +470,25 @@ html, body {
   border-radius: 18px;
 }
 
+/* Image-based social icons only */
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Normalize image size */
+.social-icon img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  display: block;
+  filter: brightness(0.95);
+}
+
+/* Optional: match hover glow */
+.social a:hover img {
+  filter:
+    brightness(1.05)
+    drop-shadow(0 0 6px rgba(212,175,55,0.45));
+}

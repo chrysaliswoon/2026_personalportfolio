@@ -12,7 +12,7 @@
 
     // image
     const img = document.getElementById("pmodalImage");
-    img.src = "/static/" + project.image;
+    img.src = "/static/" + project.modal_image;
     img.alt = project.title ? `${project.title} preview` : "Project preview";
 
     // stack pills

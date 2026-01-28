@@ -65,16 +65,51 @@
 
 
 
-    <div class="social">
-            <!-- Music toggle -->
-      <button id="musicToggle" class="music-btn" type="button" aria-pressed="false" aria-label="Toggle music">
-        ♫
-      </button> 
-      <a href="https://www.linkedin.com/in/chrysalis-woon-38376198/" aria-label="LinkedIn">in</a>
-        <!-- <a href="https://github.com/chrysaliswoon" aria-label="GitHub"><img
-            src="{{ url_for('static', filename='assets/github_logo.png') }}" alt="Github"></a> -->
-      <a href="mailto:woonyx93@gmail.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
-    </div>
+<div class="social">
+  <!-- Music toggle -->
+  <button id="musicToggle"
+          class="music-btn"
+          type="button"
+          aria-pressed="false"
+          aria-label="Toggle music">
+    ♫
+  </button>
+
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/in/chrysalis-woon-38376198/"
+     aria-label="LinkedIn">
+    in
+  </a>
+
+  <!-- GitHub -->
+  <a href="https://github.com/chrysaliswoon"
+     class="social-icon"
+     aria-label="GitHub">
+    <img
+      src="{{ url_for('static', filename='assets/github_logo.png') }}"
+      alt=""
+      aria-hidden="true"
+    >
+  </a>
+
+    <!-- GitBook -->
+  <a href="https://chrysalis-1.gitbook.io/"
+     class="social-icon"
+     aria-label="Gitbook">
+    <img
+      src="{{ url_for('static', filename='assets/gitbook_logo.png') }}"
+      alt=""
+      aria-hidden="true"
+    >
+  </a>
+
+  <!-- Email -->
+  <a href="mailto:woonyx93@gmail.com"
+     aria-label="Email">
+    <i class="bi bi-envelope"></i>
+  </a>
+</div>
+
 
   </aside>
 
