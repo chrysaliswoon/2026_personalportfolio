@@ -1,8 +1,86 @@
-<section class="exp-wrap">
-  <div class="exp-card">
-    <img class="exp-divider" src="{{ url_for('static', filename='assets/divider_flourish.png') }}" alt="" aria-hidden="true">
-    <h2 class="exp-title">PAST EXPERIENCES</h2>
+<section class="exp" aria-label="Experience">
+  <!-- Section header (line_left + title + line_right) -->
+  <header class="exp-header">
+    <img class="exp-line"
+         src="{{ url_for('static', filename='assets/line_left.png') }}"
+         alt="" aria-hidden="true">
 
-    <!-- Your experience items go here -->
+    <h2 class="exp-title">EXPERIENCE</h2>
+
+    <img class="exp-line"
+         src="{{ url_for('static', filename='assets/line_right.png') }}"
+         alt="" aria-hidden="true">
+  </header>
+
+  <div class="exp-accordion" data-accordion>
+    {% for e in experiences %}
+    <div class="exp-item">
+      <button
+        class="exp-trigger"
+        type="button"
+        aria-expanded="false"
+        aria-controls="exp-panel-{{ loop.index }}"
+        id="exp-trigger-{{ loop.index }}"
+      >
+        <div class="exp-trigger-left">
+          <div class="exp-role">{{ e.role }}</div>
+          <div class="exp-company">@ {{ e.company }}</div>
+        </div>
+
+        <div class="exp-trigger-right">
+          <div class="exp-dates">{{ e.dates }}</div>
+          <div class="exp-icon" aria-hidden="true">+</div>
+        </div>
+      </button>
+
+      <div
+        class="exp-panel"
+        id="exp-panel-{{ loop.index }}"
+        role="region"
+        aria-labelledby="exp-trigger-{{ loop.index }}"
+        hidden
+      >
+        <div class="exp-panel-inner">
+          <div class="exp-meta">
+            {% if e.location %}
+            <div class="exp-meta-row">
+              <span class="exp-meta-label">Location</span>
+              <span class="exp-meta-value">{{ e.location }}</span>
+            </div>
+            {% endif %}
+
+            {% if e.links and e.links.website %}
+            <div class="exp-meta-row">
+              <span class="exp-meta-label">Website</span>
+              <a class="exp-meta-link" href="{{ e.links.website }}" target="_blank" rel="noopener">
+                {{ e.links.website }}
+              </a>
+            </div>
+            {% endif %}
+          </div>
+
+          {% if e.summary %}
+          <p class="exp-summary">{{ e.summary }}</p>
+          {% endif %}
+
+          {% if e.bullets %}
+          <ul class="exp-bullets">
+            {% for b in e.bullets %}
+            <li>{{ b }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+
+          {% if e.tags %}
+          <div class="exp-tags" aria-label="Skills used">
+            {% for t in e.tags %}
+            <span class="exp-pill">{{ t }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
   </div>
 </section>

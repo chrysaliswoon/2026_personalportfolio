@@ -172,6 +172,39 @@ PROJECTS = [
 
 ]
 
+EXPERIENCES = [
+  {
+    "role": "Site Reliability Engineer",
+    "company": "Visa Singapore",
+    "dates": "2022 – 2025",
+    "location": "Singapore",
+    "links": {
+      "website": "https://www.visa.com"
+    },
+    "summary": "Supported high-availability payment systems, incident response, and reliability improvements across production environments.",
+    "bullets": [
+      "Led incident triage, escalation, and RCA documentation in regulated environments.",
+      "Built automation to reduce operational toil and improve monitoring coverage.",
+      "Collaborated cross-functionally to deploy changes safely and maintain SLAs."
+    ],
+    "tags": ["SRE", "Incident Response", "Monitoring", "Automation", "Linux"]
+  },
+  {
+    "role": "Software Engineer",
+    "company": "Kodecoon",
+    "dates": "2021 – 2022",
+    "location": "Singapore",
+    "links": {},
+    "summary": "Delivered software features and supported deployments in a fast-paced environment.",
+    "bullets": [
+      "Implemented features and bug fixes across web applications.",
+      "Worked with Git workflows and collaborated with stakeholders for delivery."
+    ],
+    "tags": ["JavaScript", "Web Dev", "Git"]
+  }
+]
+
+
 @app.get("/")
 def start():
     return render_template("start.html")
@@ -192,4 +225,4 @@ def projects():
 
 @app.get("/about")
 def about():
-    return render_template("about.html", profile=PROFILE, active_page="about")
+    return render_template("about.html", profile=PROFILE, experiences = EXPERIENCES, active_page="about")

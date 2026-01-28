@@ -4,10 +4,13 @@
 {{super() }}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/hero.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/experience.css') }}">
+
 
   <!-- Tech Stack -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/techstack.css') }}">
   <script src="{{ url_for('static', filename='js/techstack.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/experience.js') }}" defer></script>
 {% endblock %}
 
 {% block stage %}
@@ -25,7 +28,8 @@
           <!-- Tech Stack -->
           {% include "components/about/techstack.html" %}
 
-          <!-- EXPERIENCES (always below hero) -->
+          <!-- EXPERIENCES -->
+           {% include "components/about/experience.html" %}
 
         </div>
 
