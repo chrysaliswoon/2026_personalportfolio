@@ -89,11 +89,19 @@ PROJECTS = [
         "title": "BookTribe",
         "subtitle": "Reading Platform Using Modern Full-Stack Architecture",
         "image": "assets/projects/booktribe.png",
-         "modal_image": "",
+         "modal_image": "assets/projects/booktribe.png",
         "stack": ["Angular", "Spring Boot", "MySQL", "DigitalOcean"],
                         "shots": [
                             "assets/projects/booktribe/register.png",
                             "assets/projects/booktribe/login.png",
+                            "assets/projects/booktribe/dashboard.png",
+                            "assets/projects/booktribe/search.png",
+                            "assets/projects/booktribe/search2.png",
+                            "assets/projects/booktribe/review.png",
+                            "assets/projects/booktribe/tribe.png",
+                            "assets/projects/booktribe/inspire.png",
+                            "assets/projects/booktribe/profile.png",
+                            "assets/projects/booktribe/donate.png",
                             "assets/projects/booktribe/contact.png",
 
 
@@ -104,9 +112,8 @@ PROJECTS = [
             "deployed a scalable backend on DigitalOcean."
         ),
         "links": {
-            "github": "https://github.com/yourname/booktribe",
-            "slides": "https://your-presentation-link",
-            "demo": None
+            "github": "https://github.com/chrysaliswoon/BookTribeV2",
+            "demo": "https://www.linkedin.com/posts/chrysalis-woon_vttp-activity-7057198080982487040-QphK/?utm_source=share&utm_medium=member_desktop",
         },
         "tags": ["Full Stack", "REST API"],
         "featured": True
@@ -117,18 +124,23 @@ PROJECTS = [
         "title": "Finance Tracker",
         "subtitle": "Collaborative Expense Tracking App",
         "image": "assets/projects/finance_tracker.png",
-                 "modal_image": "",
+                 "modal_image": "assets/projects/finance_tracker.png",
         "stack": [
-            "MongoDB", "Express.js", "React", "Node.js", "Vercel"
+            "MongoDB", "Express.js", "React", "Node.js", "Vercel", "Figma"
+        ],
+                        "shots": [
+                    "assets/projects/finance/register.png",
+                    "assets/projects/finance/form.png",
+                    "assets/projects/finance/form2.png",
+                    "assets/projects/finance/dashboard.png",
+                    "assets/projects/finance/transaction.png",
         ],
         "description": (
-            "Built a full-stack expense tracking application supporting "
-            "multi-user input and real-time updates. Designed collaborative "
-            "wireframes and user flows in Figma, implemented Git workflows, "
-            "and deployed via Vercel for CI/CD."
+            "Built a full-stack expense tracking application supporting multi-user input and real-time updates. \n\n"
+            "Designed collaborative wireframes and user flows in Figma, implemented Git workflows, and deployed via Vercel for CI/CD."
         ),
         "links": {
-            "github": "https://github.com/yourname/financial-tracker",
+            "github": "https://github.com/chrysaliswoon/financial-tracker",
             "demo": None
         },
         "tags": ["MERN", "CI/CD", "Collaboration"],
@@ -142,8 +154,8 @@ PROJECTS = [
         "modal_image": "assets/projects/cloudscale.png",
         "stack": ["AWS Lambda", "EC2", "Apache Superset"],
         "shots": [
-            "assets/projects/cloudscale/dashboard.png",
             "assets/projects/cloudscale/login.png",
+            "assets/projects/cloudscale/dashboard.png",
             "assets/projects/cloudscale/project_structure.png"
         ],
 
@@ -165,6 +177,27 @@ PROJECTS = [
         "title": "Catris",
         "subtitle": "Cat-Themed Puzzle Game Inspired by Classic Tetris",
         "image": "assets/projects/catris.png",
+        "modal_image": "assets/projects/catris.png",
+        "stack": ["HTML", "CSS", "Javascript", "APIs", "Github Page"],
+                "shots": [
+                    "assets/projects/tetris/plan.png",
+                    "assets/projects/tetris/start.png",
+                    "assets/projects/tetris/game.png",
+                    "assets/projects/tetris/message.png",
+                    
+        ],
+
+        "description": (
+            "Created a Tetris-inspired game using HTML, CSS, and JavaScript, showcasing expertise in front-end development and the Canvas API."
+            
+        ),
+                "links": {
+            "docs": None,
+            "github": "https://github.com/chrysaliswoon/catris-game",
+            "demo": "https://chrysaliswoon.github.io/catris-game/"
+        },
+        "tags": ["HTML", "CSS", "Javascript"],
+        "featured": True
 
     },
         {
@@ -172,6 +205,24 @@ PROJECTS = [
         "title": "Landscape Game",
         "subtitle": "Landscape game inspired by Coffee Tycoon",
         "image": "assets/projects/landscape.png",
+                "modal_image": "assets/projects/landscape.png",
+        "stack": ["HTML", "CSS", "Javascript"],
+                "shots": [
+                    "assets/projects/landscape/game.png",
+        ],
+
+        "description": (
+            "Created a simple, browser-based JavaScript game that utilizes alert() and prompt() to send messages and receive input from the user. \n\n",
+            "Applied fundamental programming concepts such as loops, arrays, and conditionals."
+            
+        ),
+                        "links": {
+            "docs": None,
+            "github": "https://github.com/chrysaliswoon/landscape-tycoon",
+            "demo": "https://chrysaliswoon.github.io/landscape-tycoon/"
+        },
+        "tags": ["HTML", "CSS", "Javascript"],
+        "featured": True
 
     },
 
