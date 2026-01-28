@@ -1,9 +1,13 @@
+import os
 from flask import Flask, render_template
+
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+ROOT_DIR = os.path.abspath(os.path.join(BASE_DIR, ".."))
 
 app = Flask(
     __name__,
-    template_folder="../templates",
-    static_folder="../static",
+    template_folder=os.path.join(ROOT_DIR, "templates"),
+    static_folder=os.path.join(ROOT_DIR, "static"),
     static_url_path="/static",
 )
 
